@@ -1,7 +1,6 @@
 
 /* ==========================================
-   ALBA FASHION
-   DISEÑO GENERAL
+   ALBA FASHION - DISEÑO GENERAL
 ========================================== */
 
 * {
@@ -47,8 +46,6 @@ input {
     margin-bottom: 20px;
 }
 
-/* LOGO ORIGINAL */
-
 .logo {
     display: block;
     width: 320px;
@@ -87,16 +84,13 @@ main {
     width: 100%;
     max-width: 650px;
     margin: 0 auto;
-
     display: flex;
     align-items: center;
     gap: 10px;
-
     background-color: #FFFFFF;
     border: 1px solid #E8D3D0;
     border-radius: 35px;
     padding: 5px 8px 5px 17px;
-
     box-shadow: 0 3px 12px rgba(101, 75, 66, 0.05);
 }
 
@@ -111,9 +105,7 @@ main {
     border: none;
     outline: none;
     background: transparent;
-
     padding: 11px 5px;
-
     color: #654B42;
     font-size: 14px;
 }
@@ -126,13 +118,10 @@ main {
     width: 38px;
     height: 38px;
     flex-shrink: 0;
-
     border: none;
     border-radius: 50%;
-
     background-color: #B87582;
     color: #FFFFFF;
-
     font-size: 18px;
     cursor: pointer;
     transition: 0.3s;
@@ -151,10 +140,8 @@ main {
 .categorias {
     width: 100%;
     max-width: 1400px;
-
     margin: 15px auto 35px;
     padding: 15px 25px;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -185,13 +172,10 @@ main {
     border: 1px solid #E8D3D0;
     background-color: #FFFFFF;
     color: #765454;
-
     padding: 11px 22px;
     border-radius: 30px;
-
     font-size: 13px;
     font-weight: 500;
-
     cursor: pointer;
     transition: all 0.25s ease;
 }
@@ -205,6 +189,168 @@ main {
     background-color: #B87582;
     border-color: #B87582;
     color: #FFFFFF;
+}
+
+
+/* ==========================================
+   MODELOS POPULARES
+========================================== */
+
+.modelos-populares {
+    width: 100%;
+    max-width: 1500px;
+    margin: 10px auto 45px;
+    padding: 20px 65px;
+    overflow: visible;
+}
+
+.titulo-populares {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.titulo-populares h2 {
+    color: #654B42;
+    font-size: 27px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.titulo-populares p {
+    color: #927671;
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   CONTENEDOR DEL CARRUSEL
+========================================== */
+
+.contenedor-carrusel {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+}
+
+.carrusel-populares {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.carrusel-populares::-webkit-scrollbar {
+    display: none;
+}
+
+.lista-populares {
+    display: flex;
+    gap: 22px;
+    width: max-content;
+    padding: 5px 2px 15px;
+}
+
+
+/* ==========================================
+   TARJETAS POPULARES
+========================================== */
+
+.tarjeta-popular {
+    flex: 0 0 220px;
+    min-width: 0;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(101, 75, 66, 0.08);
+    scroll-snap-align: start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-popular:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 9px 22px rgba(101, 75, 66, 0.13);
+}
+
+.foto-popular {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    background-color: #F4E8E2;
+    cursor: pointer;
+    transition: transform 0.35s ease;
+}
+
+.foto-popular:hover {
+    transform: scale(1.03);
+}
+
+.info-popular {
+    padding: 15px 13px 17px;
+}
+
+.info-popular h3 {
+    color: #654B42;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+
+.info-popular p {
+    color: #B87582;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   FLECHAS GRANDES LATERALES
+========================================== */
+
+.flecha-popular {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 30;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 65px;
+    height: 110px;
+
+    padding: 0;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+
+    color: #B87582;
+    font-size: 85px;
+    font-weight: 300;
+    line-height: 1;
+
+    cursor: pointer;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.flecha-popular:hover {
+    color: #925967;
+    transform: translateY(-50%) scale(1.15);
+}
+
+.flecha-popular.izquierda {
+    left: -60px;
+}
+
+.flecha-popular.derecha {
+    right: -60px;
 }
 
 
@@ -242,55 +388,37 @@ main {
 
 .lista-productos {
     display: grid;
-
     grid-template-columns: repeat(4, minmax(0, 1fr));
-
     gap: 25px;
-
     width: 100%;
 }
 
 
 /* ==========================================
-   TARJETAS
+   TARJETAS DE PRODUCTOS
 ========================================== */
 
 .tarjeta {
     min-width: 0;
     overflow: hidden;
-
     background-color: #FFFFFF;
     border-radius: 16px;
-
     box-shadow: 0 4px 16px rgba(101, 75, 66, 0.08);
-
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tarjeta:hover {
     transform: translateY(-5px);
-
     box-shadow: 0 9px 22px rgba(101, 75, 66, 0.13);
 }
 
-
-/* ==========================================
-   FOTOGRAFÍAS PRINCIPALES
-========================================== */
-
 .foto-producto {
     display: block;
-
     width: 100%;
     aspect-ratio: 3 / 4;
-
     object-fit: cover;
-
     background-color: #F4E8E2;
-
     cursor: pointer;
-
     transition: transform 0.35s ease;
 }
 
@@ -298,75 +426,41 @@ main {
     transform: scale(1.02);
 }
 
-
-/* ==========================================
-   INFORMACIÓN DE PRODUCTOS
-========================================== */
-
 .info-producto {
     padding: 17px 16px 19px;
 }
 
-
-/* NOMBRE DEL MODELO */
-
 .nombre-producto {
     color: #654B42;
-
     font-size: 21px;
     font-weight: 700;
-
     line-height: 1.3;
-
     margin-bottom: 10px;
 }
-
-
-/* CONTENEDOR DE PRECIOS */
 
 .precios-producto {
     margin: 8px 0 12px;
 }
 
-
-/* PRECIO POR UNIDAD */
-
 .precio-unidad {
     color: #B87582;
-
     font-size: 15px;
     font-weight: 600;
-
     margin-bottom: 5px;
 }
 
-
-/* PRECIO POR MAYOR */
-
 .precio-mayor {
     color: #927671;
-
     font-size: 14px;
     font-weight: 600;
-
     margin-bottom: 7px;
 }
 
-
-/* TEXTO DE TALLAS */
-
 .texto-tallas {
     color: #927671;
-
     font-size: 13px;
-
     margin-bottom: 8px;
 }
-
-
-/* ==========================================
-   TALLAS DISPONIBLES
-========================================== */
 
 .tallas {
     display: flex;
@@ -376,17 +470,21 @@ main {
 
 .tallas span {
     display: inline-block;
-
     border: 1px solid #E8D3D0;
     background-color: #F9F0ED;
-
     color: #765454;
-
     padding: 6px 12px;
     border-radius: 6px;
-
     font-size: 12px;
     font-weight: 600;
+}
+
+.descripcion-producto {
+    color: #927671;
+    font-size: 12px;
+    line-height: 1.6;
+    margin-top: 12px;
+    font-weight: 400;
 }
 
 
@@ -396,10 +494,8 @@ main {
 
 .sin-productos {
     grid-column: 1 / -1;
-
     text-align: center;
     padding: 65px 20px;
-
     color: #927671;
 }
 
@@ -420,123 +516,79 @@ main {
 
 .modal {
     display: none;
-
     position: fixed;
     inset: 0;
-
     z-index: 2000;
-
     background-color: rgba(50, 35, 35, 0.75);
-
     justify-content: center;
     align-items: center;
-
     padding: 20px;
 }
 
 .modal-contenido {
     position: relative;
-
     width: 100%;
     max-width: 780px;
-
     max-height: 92vh;
     overflow-y: auto;
-
     background-color: #FFF9F6;
-
     padding: 35px;
     border-radius: 20px;
-
     text-align: center;
-
     animation: aparecer 0.3s ease;
 }
-
-
-/* ANIMACIÓN DEL MODAL */
 
 @keyframes aparecer {
     from {
         opacity: 0;
         transform: translateY(18px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-
-/* BOTÓN CERRAR */
-
 .cerrar-modal {
     position: absolute;
-
     top: 12px;
     right: 20px;
-
     border: none;
     background: transparent;
-
     color: #765454;
     font-size: 35px;
-
     cursor: pointer;
 }
-
-
-/* NOMBRE DEL PRODUCTO */
 
 #titulo-modal {
     color: #654B42;
     font-size: 29px;
-
     margin: 12px 35px 10px;
 }
-
-
-/* TEXTO DE COLORES */
 
 .texto-modal {
     color: #927671;
     font-size: 14px;
-
     margin: 15px 0;
 }
-
-
-/* ==========================================
-   GALERÍA DE COLORES
-========================================== */
 
 #galeria-colores {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     gap: 16px;
     width: 100%;
 }
 
 .foto-color {
     display: block;
-
     width: 100%;
     max-width: 580px;
-
     height: auto;
-
     object-fit: contain;
-
     margin: 0 auto;
-
     border-radius: 12px;
 }
-
-
-/* PRECIOS DEL MODAL */
 
 #precio-modal {
     margin: 20px 0 12px;
@@ -550,13 +602,9 @@ main {
     font-size: 16px;
 }
 
-
-/* TALLAS DEL MODAL */
-
 .tallas-modal {
     color: #765454;
     font-size: 14px;
-
     margin-bottom: 10px;
 }
 
@@ -567,10 +615,8 @@ main {
 
 .whatsapp-container {
     position: fixed;
-
     right: 22px;
     bottom: 22px;
-
     z-index: 1500;
 }
 
@@ -578,23 +624,15 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-
     gap: 10px;
-
     padding: 12px 17px;
-
     background-color: #25D366;
     color: #FFFFFF;
-
     border-radius: 35px;
-
     text-decoration: none;
-
     font-size: 14px;
     font-weight: 600;
-
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18);
-
     transition: all 0.3s ease;
 }
 
@@ -622,21 +660,15 @@ main {
 
 footer {
     width: 100%;
-
     background-color: #F3E5DE;
-
     text-align: center;
-
     padding: 30px 20px;
-
     color: #765454;
 }
 
 footer h3 {
     color: #654B42;
-
     font-size: 22px;
-
     margin-bottom: 8px;
 }
 
@@ -657,7 +689,6 @@ footer .derechos {
 ========================================== */
 
 @media (max-width: 1150px) {
-
     .lista-productos {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 20px;
@@ -668,6 +699,18 @@ footer .derechos {
         padding-right: 25px;
     }
 
+    .modelos-populares {
+        padding-left: 55px;
+        padding-right: 55px;
+    }
+
+    .flecha-popular.izquierda {
+        left: -48px;
+    }
+
+    .flecha-popular.derecha {
+        right: -48px;
+    }
 }
 
 
@@ -676,7 +719,6 @@ footer .derechos {
 ========================================== */
 
 @media (max-width: 800px) {
-
     .lista-productos {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 17px;
@@ -695,6 +737,34 @@ footer .derechos {
         width: 100%;
     }
 
+    .modelos-populares {
+        padding: 18px 45px;
+    }
+
+    .titulo-populares h2 {
+        font-size: 23px;
+    }
+
+    .tarjeta-popular {
+        flex-basis: 195px;
+    }
+
+    .lista-populares {
+        gap: 16px;
+    }
+
+    .flecha-popular {
+        font-size: 72px;
+        width: 50px;
+    }
+
+    .flecha-popular.izquierda {
+        left: -42px;
+    }
+
+    .flecha-popular.derecha {
+        right: -42px;
+    }
 }
 
 
@@ -703,9 +773,6 @@ footer .derechos {
 ========================================== */
 
 @media (max-width: 550px) {
-
-    /* ENCABEZADO */
-
     .encabezado {
         padding: 27px 12px 22px;
     }
@@ -727,9 +794,6 @@ footer .derechos {
         letter-spacing: 1.5px;
     }
 
-
-    /* BUSCADOR */
-
     .busqueda {
         padding: 20px 12px 10px;
     }
@@ -748,9 +812,6 @@ footer .derechos {
         height: 34px;
         font-size: 16px;
     }
-
-
-    /* CATEGORÍAS */
 
     .categorias {
         padding: 15px 10px;
@@ -775,8 +836,58 @@ footer .derechos {
         font-size: 11px;
     }
 
+    .modelos-populares {
+        padding: 15px 35px;
+        margin-bottom: 30px;
+    }
 
-    /* PRODUCTOS */
+    .titulo-populares {
+        margin-bottom: 16px;
+        gap: 8px;
+    }
+
+    .titulo-populares h2 {
+        font-size: 20px;
+    }
+
+    .titulo-populares p {
+        font-size: 11px;
+    }
+
+    .lista-populares {
+        gap: 12px;
+    }
+
+    .tarjeta-popular {
+        flex-basis: 155px;
+        border-radius: 12px;
+    }
+
+    .info-popular {
+        padding: 11px 9px 13px;
+    }
+
+    .info-popular h3 {
+        font-size: 14px;
+    }
+
+    .info-popular p {
+        font-size: 11px;
+    }
+
+    .flecha-popular {
+        width: 38px;
+        height: 75px;
+        font-size: 55px;
+    }
+
+    .flecha-popular.izquierda {
+        left: -32px;
+    }
+
+    .flecha-popular.derecha {
+        right: -32px;
+    }
 
     .productos {
         padding: 12px 12px 40px;
@@ -796,16 +907,10 @@ footer .derechos {
         line-height: 1.5;
     }
 
-
-    /* DOS COLUMNAS */
-
     .lista-productos {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
     }
-
-
-    /* TARJETAS */
 
     .tarjeta {
         border-radius: 12px;
@@ -824,17 +929,11 @@ footer .derechos {
         padding: 11px 9px 13px;
     }
 
-
-    /* NOMBRE */
-
     .nombre-producto {
         font-size: 16px;
         line-height: 1.3;
         margin-bottom: 7px;
     }
-
-
-    /* PRECIOS */
 
     .precios-producto {
         margin: 6px 0 9px;
@@ -850,9 +949,6 @@ footer .derechos {
         margin-bottom: 5px;
     }
 
-
-    /* TALLAS */
-
     .texto-tallas {
         font-size: 10px;
         margin-bottom: 6px;
@@ -867,8 +963,9 @@ footer .derechos {
         font-size: 10px;
     }
 
-
-    /* MODAL */
+    .descripcion-producto {
+        font-size: 10px;
+    }
 
     .modal {
         padding: 10px;
@@ -905,9 +1002,6 @@ footer .derechos {
         font-size: 12px;
     }
 
-
-    /* WHATSAPP */
-
     .whatsapp-container {
         right: 12px;
         bottom: 14px;
@@ -924,9 +1018,6 @@ footer .derechos {
         height: 23px;
     }
 
-
-    /* FOOTER */
-
     footer {
         padding: 25px 12px;
     }
@@ -938,7 +1029,6 @@ footer .derechos {
     footer p {
         font-size: 11px;
     }
-
 }
 
 
@@ -947,7 +1037,6 @@ footer .derechos {
 ========================================== */
 
 @media (max-width: 360px) {
-
     .encabezado h1 {
         font-size: 21px;
     }
@@ -978,260 +1067,6 @@ footer .derechos {
         font-size: 10px;
     }
 
-}
-.descripcion-producto {
-    color: #927671;
-    font-size: 12px;
-    line-height: 1.6;
-    margin-top: 12px;
-    font-weight: 400;
-}
-
-/* ==========================================
-   MODELOS POPULARES
-========================================== */
-
-.modelos-populares {
-    width: 100%;
-    max-width: 1500px;
-    margin: 10px auto 45px;
-    padding: 20px 35px;
-}
-
-/* TÍTULO Y CONTROLES */
-
-.titulo-populares {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    margin-bottom: 22px;
-}
-
-.titulo-populares h2 {
-    color: #654B42;
-    font-size: 27px;
-    font-weight: 700;
-    margin-bottom: 7px;
-}
-
-.titulo-populares p {
-    color: #927671;
-    font-size: 14px;
-}
-
-/* BOTONES DE DESPLAZAMIENTO */
-
-.controles-populares {
-    display: flex;
-    gap: 10px;
-}
-
-.controles-populares button {
-    width: 40px;
-    height: 40px;
-
-    border: 1px solid #E8D3D0;
-    border-radius: 50%;
-
-    background-color: #FFFFFF;
-    color: #B87582;
-
-    font-size: 19px;
-    cursor: pointer;
-
-    transition: all 0.3s ease;
-}
-
-.controles-populares button:hover {
-    background-color: #B87582;
-    color: #FFFFFF;
-    border-color: #B87582;
-}
-
-/* CONTENEDOR DEL CARRUSEL */
-
-.carrusel-populares {
-    width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-
-    scrollbar-width: none;
-}
-
-.carrusel-populares::-webkit-scrollbar {
-    display: none;
-}
-
-/* LISTA DE MODELOS */
-
-.lista-populares {
-    display: flex;
-    gap: 22px;
-    width: max-content;
-    padding: 5px 2px 15px;
-}
-
-/* TARJETAS POPULARES */
-
-.tarjeta-popular {
-    flex: 0 0 220px;
-    min-width: 0;
-
-    overflow: hidden;
-
-    background-color: #FFFFFF;
-    border-radius: 16px;
-
-    box-shadow: 0 4px 16px rgba(101, 75, 66, 0.08);
-
-    scroll-snap-align: start;
-
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
-}
-
-.tarjeta-popular:hover {
-    transform: translateY(-5px);
-
-    box-shadow: 0 9px 22px rgba(101, 75, 66, 0.13);
-}
-
-/* FOTOGRAFÍA */
-
-.foto-popular {
-    display: block;
-
-    width: 100%;
-    aspect-ratio: 3 / 4;
-
-    object-fit: cover;
-
-    background-color: #F4E8E2;
-
-    cursor: pointer;
-
-    transition: transform 0.35s ease;
-}
-
-.foto-popular:hover {
-    transform: scale(1.03);
-}
-
-/* INFORMACIÓN */
-
-.info-popular {
-    padding: 15px 13px 17px;
-}
-
-.info-popular h3 {
-    color: #654B42;
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 1.3;
-
-    margin-bottom: 8px;
-}
-
-.info-popular p {
-    color: #B87582;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-
-/* ==========================================
-   MODELOS POPULARES - TABLETS
-========================================== */
-
-@media (max-width: 800px) {
-
-    .modelos-populares {
-        padding: 18px 25px;
-    }
-
-    .titulo-populares h2 {
-        font-size: 23px;
-    }
-
-    .tarjeta-popular {
-        flex-basis: 195px;
-    }
-
-    .lista-populares {
-        gap: 16px;
-    }
-
-}
-
-
-/* ==========================================
-   MODELOS POPULARES - CELULARES
-========================================== */
-
-@media (max-width: 550px) {
-
-    .modelos-populares {
-        padding: 15px 12px;
-        margin-bottom: 30px;
-    }
-
-    .titulo-populares {
-        margin-bottom: 16px;
-        gap: 8px;
-    }
-
-    .titulo-populares h2 {
-        font-size: 20px;
-    }
-
-    .titulo-populares p {
-        font-size: 11px;
-    }
-
-    .controles-populares {
-        gap: 6px;
-    }
-
-    .controles-populares button {
-        width: 33px;
-        height: 33px;
-        font-size: 16px;
-    }
-
-    .lista-populares {
-        gap: 12px;
-    }
-
-    .tarjeta-popular {
-        flex-basis: 155px;
-        border-radius: 12px;
-    }
-
-    .info-popular {
-        padding: 11px 9px 13px;
-    }
-
-    .info-popular h3 {
-        font-size: 14px;
-    }
-
-    .info-popular p {
-        font-size: 11px;
-    }
-
-}
-
-
-/* ==========================================
-   CELULARES MUY PEQUEÑOS
-========================================== */
-
-@media (max-width: 360px) {
-
     .tarjeta-popular {
         flex-basis: 140px;
     }
@@ -1239,72 +1074,4 @@ footer .derechos {
     .titulo-populares h2 {
         font-size: 18px;
     }
-
-}
-
-/* ==========================================
-   FLECHAS LATERALES DEL CARRUSEL
-========================================== */
-
-.contenedor-carrusel {
-    position: relative;
-    width: 100%;
-}
-
-.flecha-popular {
-    position: absolute;
-
-    /* CENTRAR VERTICALMENTE RESPECTO A LAS FOTOS */
-    top: 150px;
-    transform: translateY(-50%);
-
-    z-index: 30;
-
-    width: 65px;
-    height: 100px;
-
-    border: none;
-    background: transparent;
-
-    color: #B87582;
-    font-size: 85px;
-    font-weight: 300;
-    line-height: 1;
-
-    cursor: pointer;
-    transition: 0.25s ease;
-}
-
-.flecha-popular:hover {
-    color: #925967;
-    transform: translateY(-50%) scale(1.15);
-}
-
-.flecha-popular.izquierda {
-    left: -35px;
-}
-
-.flecha-popular.derecha {
-    right: -35px;
-}
-
-/* CELULARES */
-
-@media (max-width: 550px) {
-
-    .flecha-popular {
-        top: 110px;
-        width: 45px;
-        height: 65px;
-        font-size: 60px;
-    }
-
-    .flecha-popular.izquierda {
-        left: -15px;
-    }
-
-    .flecha-popular.derecha {
-        right: -15px;
-    }
-
 }

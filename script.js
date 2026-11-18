@@ -1,10 +1,9 @@
 
 /* =========================================
-   LISTA DE PRODUCTOS
+   ALBA FASHION - PRODUCTOS
 ========================================= */
 
 const productos = [
-
     {
         nombre: "Bomber de paño",
         categoria: "PAÑOS",
@@ -20,7 +19,6 @@ const productos = [
             "imagenes/paños/bombers/bom-paño-col2.jpeg"
         ]
     },
-
     {
         nombre: "Napoleon Paño",
         categoria: "PAÑOS",
@@ -35,7 +33,6 @@ const productos = [
             "imagenes/paños/napoleon/napoleon-col2.jpeg"
         ]
     },
-
     {
         nombre: "Oversize Jean",
         categoria: "JEANS",
@@ -50,7 +47,6 @@ const productos = [
             "imagenes/jeans/casaca/casaca-jean3.jpeg"
         ]
     },
-
     {
         nombre: "Blazer manga 3/4",
         categoria: "BLAZER",
@@ -66,7 +62,6 @@ const productos = [
             "imagenes/catania/blazer34/blazer-34-part4.jpeg"
         ]
     },
-
     {
         nombre: "Napoleón Jean",
         categoria: "JEANS",
@@ -81,7 +76,6 @@ const productos = [
             "imagenes/jeans/napoleon/napoleon-jean2.jpeg"
         ]
     },
-
     {
         nombre: "Clasico Cuero",
         categoria: "CUEROS",
@@ -97,7 +91,6 @@ const productos = [
             "imagenes/cueros/clasicos/clasico-cuero4.jpeg"
         ]
     },
-
     {
         nombre: "Biker Jean",
         categoria: "JEANS",
@@ -113,7 +106,6 @@ const productos = [
             "imagenes/jeans/biker/biker-jean3.jpeg"
         ]
     },
-
     {
         nombre: "Bomber Cuero",
         categoria: "CUEROS",
@@ -131,7 +123,6 @@ const productos = [
             "imagenes/cueros/bombers/bom-cueros-part3.jpeg"
         ]
     },
-
     {
         nombre: "Camisaco Jean",
         categoria: "JEANS",
@@ -146,7 +137,6 @@ const productos = [
             "imagenes/jeans/camisacos/camisaco-jean3.jpeg"
         ]
     },
-
     {
         nombre: "Camisaco Cuero",
         categoria: "CUEROS",
@@ -162,7 +152,6 @@ const productos = [
             "imagenes/cueros/camisacos/camisaco-cuero4.jpeg"
         ]
     },
-
     {
         nombre: "Casaca Carnero",
         categoria: "PAÑOS",
@@ -181,7 +170,6 @@ const productos = [
             "imagenes/paños/carnero/carnero-col6.jpeg"
         ]
     },
-
     {
         nombre: "Biker Combinado",
         categoria: "CUEROS",
@@ -196,7 +184,6 @@ const productos = [
             "imagenes/cueros/combinado/cuero-combinado-col3.jpeg"
         ]
     },
-
     {
         nombre: "Bomber Corderoy",
         categoria: "TODOS",
@@ -213,7 +200,6 @@ const productos = [
             "imagenes/corderoy/bomber-corderoy5.jpeg"
         ]
     },
-
     {
         nombre: "Casaca suede",
         categoria: "GAMUZADOS",
@@ -228,7 +214,6 @@ const productos = [
             "imagenes/gamuzados/casacas/cas-suede-col3.jpeg"
         ]
     },
-
     {
         nombre: "Bomber Cuero Cadete",
         categoria: "CUEROS",
@@ -243,7 +228,6 @@ const productos = [
             "imagenes/cueros/bombers/bomber-cadete-col3.jpeg"
         ]
     },
-
     {
         nombre: "Biker Cuero",
         categoria: "CUEROS",
@@ -259,7 +243,6 @@ const productos = [
             "imagenes/cueros/bikers/biker-cuero-col4.jpeg"
         ]
     },
-
     {
         nombre: "Chanel Con Estampado",
         categoria: "PAÑOS",
@@ -277,7 +260,6 @@ const productos = [
             "imagenes/paños/chanel/chanel-estampado-col5.jpeg"
         ]
     },
-
     {
         nombre: "Jacket cadete",
         categoria: "CUEROS",
@@ -294,7 +276,6 @@ const productos = [
             "imagenes/cueros/cuero-mate/cuero-mate-col5.jpeg"
         ]
     },
-
     {
         nombre: "Chanel de paño",
         categoria: "PAÑOS",
@@ -308,7 +289,6 @@ const productos = [
             "imagenes/paños/chanel/chan-paño-col2.jpeg"
         ]
     },
-
     {
         nombre: "Gabardina de paño",
         categoria: "PAÑOS",
@@ -321,7 +301,6 @@ const productos = [
             "imagenes/paños/gabardinas/gab-paño-col.jpeg"
         ]
     }
-
 ];
 
 
@@ -344,12 +323,11 @@ const tallasModal = document.getElementById("tallas-modal");
 const listaPopulares = document.getElementById("lista-populares");
 const anteriorPopular = document.getElementById("anterior-popular");
 const siguientePopular = document.getElementById("siguiente-popular");
-
 const seccionPopulares = document.querySelector(".modelos-populares");
 
 
 /* =========================================
-   MODELOS POPULARES SELECCIONADOS
+   MODELOS POPULARES
 ========================================= */
 
 const nombresPopulares = [
@@ -364,31 +342,21 @@ const nombresPopulares = [
     "Jacket cadete"
 ];
 
-
-/* =========================================
-   CATEGORÍA INICIAL
-========================================= */
-
 let categoriaActual = "Todas";
 
 
 /* =========================================
-   MOSTRAR U OCULTAR MODELOS POPULARES
+   MOSTRAR U OCULTAR POPULARES
 ========================================= */
 
 function actualizarPopulares() {
-
     if (!seccionPopulares || !buscador) return;
 
-    const texto = buscador.value.trim();
-
-    const mostrarDestacados =
+    const mostrar =
         categoriaActual.toLowerCase() === "todas" &&
-        texto === "";
+        buscador.value.trim() === "";
 
-    seccionPopulares.style.display =
-        mostrarDestacados ? "block" : "none";
-
+    seccionPopulares.style.display = mostrar ? "block" : "none";
 }
 
 
@@ -397,116 +365,78 @@ function actualizarPopulares() {
 ========================================= */
 
 function mostrarProductos() {
-
-    if (!lista || !buscador) {
-        console.error("No se encontró la lista de productos o el buscador.");
-        return;
-    }
+    if (!lista || !buscador) return;
 
     lista.innerHTML = "";
 
     const texto = buscador.value.toLowerCase().trim();
 
-    // Actualizar visibilidad de modelos populares
     actualizarPopulares();
 
     const filtrados = productos.filter(producto => {
-
         const coincideNombre =
             producto.nombre.toLowerCase().includes(texto);
 
-        const categoriaSeleccionada =
-            categoriaActual.toLowerCase();
+        const categoria = categoriaActual.toLowerCase();
 
         const coincideCategoria =
-            categoriaSeleccionada === "todas" ||
-            categoriaSeleccionada === "todos" ||
-            producto.categoria.toLowerCase() === categoriaSeleccionada;
+            categoria === "todas" ||
+            categoria === "todos" ||
+            producto.categoria.toLowerCase() === categoria;
 
         return coincideNombre && coincideCategoria;
-
     });
 
-
-    // SI NO HAY PRODUCTOS
-
     if (filtrados.length === 0) {
-
         lista.innerHTML = `
             <div class="sin-productos">
                 <h3>Próximamente ♡</h3>
                 <p>Estamos preparando nuestra colección.</p>
             </div>
         `;
-
         return;
     }
 
-
-    // CREAR TARJETAS
-
     filtrados.forEach(producto => {
-
         const tarjeta = document.createElement("div");
-
         tarjeta.className = "tarjeta";
 
         tarjeta.innerHTML = `
-            <img
-                src="${producto.imagen}"
-                alt="${producto.nombre}"
-                class="foto-producto"
-            >
+            <img src="${producto.imagen}"
+                 alt="${producto.nombre}"
+                 class="foto-producto">
 
             <div class="info-producto">
-
-                <h3 class="nombre-producto">
-                    ${producto.nombre}
-                </h3>
+                <h3 class="nombre-producto">${producto.nombre}</h3>
 
                 <div class="precios-producto">
-
                     <p class="precio-unidad">
                         Unidad: Bs. ${producto.precioUnidad}
                     </p>
-
                     <p class="precio-mayor">
                         Por mayor: Bs. ${producto.precioMayor}
                     </p>
-
                 </div>
 
-                <p class="texto-tallas">
-                    Tallas disponibles
-                </p>
+                <p class="texto-tallas">Tallas disponibles</p>
 
                 <div class="tallas">
-                    ${producto.tallas.map(talla => `
-                        <span>${talla}</span>
-                    `).join("")}
+                    ${producto.tallas.map(talla =>
+                        `<span>${talla}</span>`
+                    ).join("")}
                 </div>
 
                 <p class="descripcion-producto">
                     ${producto.descripcion || ""}
                 </p>
-
             </div>
         `;
 
-
-        // ABRIR DETALLES AL PRESIONAR LA IMAGEN
-
         tarjeta.querySelector(".foto-producto")
-            .addEventListener("click", () => {
-
-                abrirModal(producto);
-
-            });
+            .addEventListener("click", () => abrirModal(producto));
 
         lista.appendChild(tarjeta);
-
     });
-
 }
 
 
@@ -515,32 +445,28 @@ function mostrarProductos() {
 ========================================= */
 
 function mostrarPopulares() {
-
     if (!listaPopulares) {
-        console.error("No se encontró #lista-populares en el HTML.");
+        console.error("No se encontró lista-populares en el HTML.");
         return;
     }
 
     listaPopulares.innerHTML = "";
 
     nombresPopulares.forEach(nombre => {
+        const producto = productos.find(p => p.nombre === nombre);
 
-        const producto = productos.find(
-            p => p.nombre === nombre
-        );
-
-        if (!producto) return;
+        if (!producto) {
+            console.warn("No se encontró el modelo popular:", nombre);
+            return;
+        }
 
         const tarjeta = document.createElement("div");
-
         tarjeta.className = "tarjeta-popular";
 
         tarjeta.innerHTML = `
-            <img
-                src="${producto.imagen}"
-                alt="${producto.nombre}"
-                class="foto-popular"
-            >
+            <img src="${producto.imagen}"
+                 alt="${producto.nombre}"
+                 class="foto-popular">
 
             <div class="info-popular">
                 <h3>${producto.nombre}</h3>
@@ -549,82 +475,53 @@ function mostrarPopulares() {
         `;
 
         tarjeta.querySelector(".foto-popular")
-            .addEventListener("click", () => {
-
-                abrirModal(producto);
-
-            });
+            .addEventListener("click", () => abrirModal(producto));
 
         listaPopulares.appendChild(tarjeta);
-
     });
-
 }
 
 
 /* =========================================
-   DESPLAZAMIENTO DE MODELOS POPULARES
+   FLECHAS DEL CARRUSEL
 ========================================= */
 
 if (siguientePopular && listaPopulares) {
-
     siguientePopular.addEventListener("click", () => {
-
         const carrusel = listaPopulares.parentElement;
 
         carrusel.scrollBy({
-            left: carrusel.clientWidth,
+            left: carrusel.clientWidth * 0.85,
             behavior: "smooth"
         });
-
     });
-
 }
 
-
 if (anteriorPopular && listaPopulares) {
-
     anteriorPopular.addEventListener("click", () => {
-
         const carrusel = listaPopulares.parentElement;
 
         carrusel.scrollBy({
-            left: -carrusel.clientWidth,
+            left: -carrusel.clientWidth * 0.85,
             behavior: "smooth"
         });
-
     });
-
 }
 
 
 /* =========================================
-   ABRIR VENTANA DEL PRODUCTO
+   ABRIR MODAL
 ========================================= */
 
 function abrirModal(producto) {
-
     if (!modal || !tituloModal || !galeria ||
-        !precioModal || !tallasModal) {
-
-        console.error("Faltan elementos del modal en el HTML.");
-        return;
-
-    }
+        !precioModal || !tallasModal) return;
 
     modal.style.display = "flex";
-
     tituloModal.textContent = producto.nombre;
-
-    // LIMPIAR FOTOGRAFÍAS ANTERIORES
-
     galeria.innerHTML = "";
 
-
-    // MOSTRAR TODAS LAS FOTOGRAFÍAS DE COLORES
-
     producto.imagenesColores.forEach(foto => {
-
         const imagen = document.createElement("img");
 
         imagen.src = foto;
@@ -632,65 +529,42 @@ function abrirModal(producto) {
         imagen.className = "foto-color";
 
         galeria.appendChild(imagen);
-
     });
-
-
-    // MOSTRAR PRECIOS
 
     precioModal.innerHTML = `
         <p class="precio-unidad">
             Precio por unidad: Bs. ${producto.precioUnidad}
         </p>
-
         <p class="precio-mayor">
             Precio por mayor: Bs. ${producto.precioMayor}
         </p>
     `;
 
-
-    // MOSTRAR TALLAS
-
     tallasModal.textContent =
         "Tallas disponibles: " + producto.tallas.join(" · ");
-
 }
 
 
 /* =========================================
-   CERRAR VENTANA
+   CERRAR MODAL
 ========================================= */
 
 if (cerrarModal && modal) {
-
     cerrarModal.addEventListener("click", () => {
-
         modal.style.display = "none";
-
     });
-
 
     modal.addEventListener("click", evento => {
-
         if (evento.target === modal) {
-
             modal.style.display = "none";
-
         }
-
     });
-
 }
 
-
 document.addEventListener("keydown", evento => {
-
     if (evento.key === "Escape" && modal) {
-
         modal.style.display = "none";
-
     }
-
 });
 
 
@@ -699,30 +573,19 @@ document.addEventListener("keydown", evento => {
 ========================================= */
 
 if (buscador) {
-
-    buscador.addEventListener("input", () => {
-
-        mostrarProductos();
-
-    });
-
+    buscador.addEventListener("input", mostrarProductos);
 }
 
 
 /* =========================================
-   LIMPIAR BUSCADOR
+   LIMPIAR BÚSQUEDA
 ========================================= */
 
 if (limpiarBusqueda && buscador) {
-
     limpiarBusqueda.addEventListener("click", () => {
-
         buscador.value = "";
-
         mostrarProductos();
-
     });
-
 }
 
 
@@ -731,48 +594,29 @@ if (limpiarBusqueda && buscador) {
 ========================================= */
 
 botones.forEach(boton => {
-
     boton.addEventListener("click", () => {
-
-        // QUITAR CATEGORÍA ACTIVA ANTERIOR
-
-        botones.forEach(b => {
-
-            b.classList.remove("activa");
-
-        });
-
-
-        // ACTIVAR CATEGORÍA SELECCIONADA
+        botones.forEach(b => b.classList.remove("activa"));
 
         boton.classList.add("activa");
+        categoriaActual = boton.dataset.categoria || "Todas";
 
-        categoriaActual = boton.dataset.categoria;
-
-        // Actualizar productos y ocultar populares
         mostrarProductos();
-
     });
-
 });
 
 
 /* =========================================
-   INICIAR CATÁLOGO AUTOMÁTICAMENTE
+   INICIAR CATÁLOGO
 ========================================= */
 
-categoriaActual = "Todas";
-
 botones.forEach(boton => {
-
     const categoria = (boton.dataset.categoria || "").toLowerCase();
 
     boton.classList.toggle(
         "activa",
         categoria === "todas" || categoria === "todos"
     );
-
 });
 
-mostrarProductos();
 mostrarPopulares();
+mostrarProductos();
