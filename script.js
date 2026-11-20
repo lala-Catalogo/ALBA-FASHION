@@ -25,14 +25,104 @@ const productos = [
         precioUnidad: 200,
         precioMayor: 160,
         tallas: ["S", "M", "L"],
-        descripcion: "Material paño con forro por dentro.",
-        imagen: "imagenes/paños/napoleon/napoleon.jpeg",
+        descripcion: "Material paño con forro por dentro, COLORES SEGUN TEMPORADA.",
+        imagen: "imagenes/paños/napoleon/napoleon-col2.jpeg",
         imagenesColores: [
             "imagenes/paños/napoleon/napoleon.jpeg",
             "imagenes/paños/napoleon/napoleon-col1.jpeg",
             "imagenes/paños/napoleon/napoleon-col2.jpeg"
         ]
     },
+
+    {
+        nombre: "Napoleon Suede",
+        categoria: "GAMUZADOS",
+        precioUnidad: 210,
+        precioMayor: 155,
+        tallas: ["S", "M", "L"],
+        descripcion: "Material gamuzado con forro interno.",
+        imagen: "imagenes/gamuzados/napoleon/napoleon-suede.jpeg",
+        imagenesColores: [
+            "imagenes/gamuzados/napoleon/napoleon-suede1.jpeg",
+            "imagenes/gamuzados/napoleon/napoleon-suede2.jpeg",
+            "imagenes/gamuzados/napoleon/napoleon-suede3.jpeg",
+            "imagenes/gamuzados/napoleon/napoleon-suede4.jpeg"
+        ]
+    },
+
+    {
+        nombre: "Crop Cuello Cadete",
+        categoria: "GAMUZADOS",
+        precioUnidad: 150,
+        precioMayor: 110,
+        tallas: ["S", "M", "L"],
+        descripcion: "Suede gamuza licrado (colores segun temporada).",
+        imagen: "imagenes/gamuzados/crop/crop-gamuza.jpeg",
+        imagenesColores: [
+            "imagenes/gamuzados/crop/crop-gamuza1.jpeg",
+            "imagenes/gamuzados/crop/crop-gamuza2.jpeg",
+            "imagenes/gamuzados/crop/crop-gamuza3.jpeg",
+            "imagenes/gamuzados/crop/crop-gamuza4.jpeg",
+            "imagenes/gamuzados/crop/crop-gamuza5.jpeg",
+            "imagenes/gamuzados/crop/crop-gamuza6.jpeg",
+            "imagenes/gamuzados/crop/crop-gamuza7.jpeg"
+        ]
+    },
+
+     {
+        nombre: "Bomber Gamuza",
+        categoria: "GAMUZADOS",
+        precioUnidad: 220,
+        precioMayor: 165,
+        tallas: ["S", "M", "L"],
+        descripcion: "Material suede gamuza, casaca oversize con forro, colores segun temporada.",
+        imagen: "imagenes/gamuzados/bomber/bomber-suede.jpeg",
+        imagenesColores: [
+            "imagenes/gamuzados/bomber/bomber-suede1.jpeg",
+            "imagenes/gamuzados/bomber/bomber-suede2.jpeg",
+            "imagenes/gamuzados/bomber/bomber-suede3.jpeg",
+            "imagenes/gamuzados/bomber/bomber-suede4.jpeg",
+            "imagenes/gamuzados/bomber/bomber-suede5.jpeg",
+            "imagenes/gamuzados/bomber/bomber-suede6.jpeg",
+            "imagenes/gamuzados/bomber/bomber-suede7.jpeg",
+            "imagenes/gamuzados/bomber/bomber-suede8.jpeg"
+        ]
+    },
+
+    {
+        nombre: "Casacas Paño",
+        categoria: "PAÑOS",
+        precioUnidad: 195,
+        precioMayor: 150,
+        tallas: ["S", "M", "L"],
+        descripcion: "Modelo clasico de paño licrado, disponible en 10 tonos (según la temporada).",
+        imagen: "imagenes/paños/casacas/casaca-paño.jpeg",
+        imagenesColores: [
+            "imagenes/paños/casacas/casaca-paño1.jpeg",
+            "imagenes/paños/casacas/casaca-paño2.jpeg",
+            "imagenes/paños/casacas/casaca-paño3.jpeg",
+            "imagenes/paños/casacas/casaca-paño4.jpeg",
+            "imagenes/paños/casacas/casaca-paño5.jpeg"
+        ]
+    },
+
+    {
+        nombre: "Casaca Cuello Cadete",
+        categoria: "GAMUZADOS",
+        precioUnidad: 190,
+        precioMayor: 145,
+        tallas: ["S", "M", "L"],
+        descripcion: "Material suede gamuza con forro interno, colores segun temporada.",
+        imagen: "imagenes/gamuzados/casaca-cadete/casaca-cadete.jpeg",
+        imagenesColores: [
+            "imagenes/gamuzados/casaca-cadete/casaca-cadete1.jpeg",
+            "imagenes/gamuzados/casaca-cadete/casaca-cadete2.jpeg",
+            "imagenes/gamuzados/casaca-cadete/casaca-cadete3.jpeg",
+            "imagenes/gamuzados/casaca-cadete/casaca-cadete4.jpeg",
+            "imagenes/gamuzados/casaca-cadete/casaca-cadete5.jpeg"
+        ]
+    },
+
     {
         nombre: "Oversize Jean",
         categoria: "JEANS",
@@ -47,6 +137,24 @@ const productos = [
             "imagenes/jeans/casaca/casaca-jean3.jpeg"
         ]
     },
+
+    {
+        nombre: "Casaca Cuello Clásico",
+        categoria: "GAMUZADOS",
+        precioUnidad: 180,
+        precioMayor: 140,
+        tallas: ["S", "M", "L"],
+        descripcion: "Material suede gamuza con forro interno, colores segun temporada.",
+        imagen: "imagenes/gamuzados/casaca-clasica/casaca-clasica.jpeg",
+        imagenesColores: [
+            "imagenes/gamuzados/casaca-clasica/casaca-clasica1.jpeg",
+            "imagenes/gamuzados/casaca-clasica/casaca-clasica2.jpeg",
+            "imagenes/gamuzados/casaca-clasica/casaca-clasica3.jpeg",
+            "imagenes/gamuzados/casaca-clasica/casaca-clasica4.jpeg",
+            "imagenes/gamuzados/casaca-clasica/casaca-clasica5.jpeg"
+        ]
+    },
+
     {
         nombre: "Blazer manga 3/4",
         categoria: "BLAZER",
@@ -62,6 +170,24 @@ const productos = [
             "imagenes/catania/blazer34/blazer-34-part4.jpeg"
         ]
     },
+
+    {
+        nombre: "Gabardina Crop",
+        categoria: "GAMUZADOS",
+        precioUnidad: 210,
+        precioMayor: 160,
+        tallas: ["S", "M", "L"],
+        descripcion: "Material suede gamuza con forro interno, colores segun temporada.",
+        imagen: "imagenes/gamuzados/gabardina/gabardina-crop.jpeg",
+        imagenesColores: [
+            "imagenes/gamuzados/gabardina/gabardina-crop1.jpeg",
+            "imagenes/gamuzados/gabardina/gabardina-crop2.jpeg",
+            "imagenes/gamuzados/gabardina/gabardina-crop3.jpeg",
+            "imagenes/gamuzados/gabardina/gabardina-crop4.jpeg",
+            "imagenes/gamuzados/gabardina/gabardina-crop5.jpeg"
+        ]
+    },
+
     {
         nombre: "Napoleón Jean",
         categoria: "JEANS",
@@ -225,7 +351,8 @@ const productos = [
         imagenesColores: [
             "imagenes/cueros/bombers/bomber-cadete-col1.jpeg",
             "imagenes/cueros/bombers/bomber-cadete-col2.jpeg",
-            "imagenes/cueros/bombers/bomber-cadete-col3.jpeg"
+            "imagenes/cueros/bombers/bomber-cadete-col3.jpeg",
+            
         ]
     },
     {
@@ -332,6 +459,7 @@ const seccionPopulares = document.querySelector(".modelos-populares");
 
 const nombresPopulares = [
     "Bomber de paño",
+    "Napoleon Suede",
     "Oversize Jean",
     "Blazer manga 3/4",
     "Bomber Cuero",
