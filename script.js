@@ -1,4 +1,3 @@
-
 /* =========================================
    ALBA FASHION - PRODUCTOS
 ========================================= */
@@ -69,7 +68,7 @@ const productos = [
         ]
     },
 
-     {
+    {
         nombre: "Bomber Gamuza",
         categoria: "GAMUZADOS",
         precioUnidad: 220,
@@ -202,6 +201,7 @@ const productos = [
             "imagenes/jeans/napoleon/napoleon-jean2.jpeg"
         ]
     },
+
     {
         nombre: "Clasico Cuero",
         categoria: "CUEROS",
@@ -217,6 +217,7 @@ const productos = [
             "imagenes/cueros/clasicos/clasico-cuero4.jpeg"
         ]
     },
+
     {
         nombre: "Biker Jean",
         categoria: "JEANS",
@@ -232,6 +233,7 @@ const productos = [
             "imagenes/jeans/biker/biker-jean3.jpeg"
         ]
     },
+
     {
         nombre: "Bomber Cuero",
         categoria: "CUEROS",
@@ -249,6 +251,7 @@ const productos = [
             "imagenes/cueros/bombers/bom-cueros-part3.jpeg"
         ]
     },
+
     {
         nombre: "Camisaco Jean",
         categoria: "JEANS",
@@ -263,6 +266,7 @@ const productos = [
             "imagenes/jeans/camisacos/camisaco-jean3.jpeg"
         ]
     },
+
     {
         nombre: "Camisaco Cuero",
         categoria: "CUEROS",
@@ -278,6 +282,7 @@ const productos = [
             "imagenes/cueros/camisacos/camisaco-cuero4.jpeg"
         ]
     },
+
     {
         nombre: "Casaca Carnero",
         categoria: "PAÑOS",
@@ -296,6 +301,7 @@ const productos = [
             "imagenes/paños/carnero/carnero-col6.jpeg"
         ]
     },
+
     {
         nombre: "Biker Combinado",
         categoria: "CUEROS",
@@ -310,6 +316,7 @@ const productos = [
             "imagenes/cueros/combinado/cuero-combinado-col3.jpeg"
         ]
     },
+
     {
         nombre: "Bomber Corderoy",
         categoria: "TODOS",
@@ -326,6 +333,7 @@ const productos = [
             "imagenes/corderoy/bomber-corderoy5.jpeg"
         ]
     },
+
     {
         nombre: "Casaca suede",
         categoria: "GAMUZADOS",
@@ -340,6 +348,7 @@ const productos = [
             "imagenes/gamuzados/casacas/cas-suede-col3.jpeg"
         ]
     },
+
     {
         nombre: "Bomber Cuero Cadete",
         categoria: "CUEROS",
@@ -351,10 +360,10 @@ const productos = [
         imagenesColores: [
             "imagenes/cueros/bombers/bomber-cadete-col1.jpeg",
             "imagenes/cueros/bombers/bomber-cadete-col2.jpeg",
-            "imagenes/cueros/bombers/bomber-cadete-col3.jpeg",
-            
+            "imagenes/cueros/bombers/bomber-cadete-col3.jpeg"
         ]
     },
+
     {
         nombre: "Biker Cuero",
         categoria: "CUEROS",
@@ -370,6 +379,7 @@ const productos = [
             "imagenes/cueros/bikers/biker-cuero-col4.jpeg"
         ]
     },
+
     {
         nombre: "Chanel Con Estampado",
         categoria: "PAÑOS",
@@ -387,6 +397,7 @@ const productos = [
             "imagenes/paños/chanel/chanel-estampado-col5.jpeg"
         ]
     },
+
     {
         nombre: "Jacket cadete",
         categoria: "CUEROS",
@@ -403,6 +414,7 @@ const productos = [
             "imagenes/cueros/cuero-mate/cuero-mate-col5.jpeg"
         ]
     },
+
     {
         nombre: "Chanel de paño",
         categoria: "PAÑOS",
@@ -416,6 +428,7 @@ const productos = [
             "imagenes/paños/chanel/chan-paño-col2.jpeg"
         ]
     },
+
     {
         nombre: "Gabardina de paño",
         categoria: "PAÑOS",
@@ -451,6 +464,9 @@ const listaPopulares = document.getElementById("lista-populares");
 const anteriorPopular = document.getElementById("anterior-popular");
 const siguientePopular = document.getElementById("siguiente-popular");
 const seccionPopulares = document.querySelector(".modelos-populares");
+
+// Controla el modal y el boton Atrás del celular
+let modalAbiertoEnHistorial = false;
 
 
 /* =========================================
@@ -646,6 +662,13 @@ function abrirModal(producto) {
         !precioModal || !tallasModal) return;
 
     modal.style.display = "flex";
+
+    // Añade una entrada al historial para que Atrás cierre el modal
+    if (!modalAbiertoEnHistorial) {
+        history.pushState({ modalProducto: true }, "");
+        modalAbiertoEnHistorial = true;
+    }
+
     tituloModal.textContent = producto.nombre;
     galeria.innerHTML = "";
 
@@ -677,21 +700,49 @@ function abrirModal(producto) {
    CERRAR MODAL
 ========================================= */
 
+function cerrarVentanaProducto() {
+    if (!modal) return;
+
+    modal.style.display = "none";
+    modalAbiertoEnHistorial = false;
+}
+
+// La X, el fondo y Escape vuelven una entrada del historial,
+// lo que activa popstate y cierra solamente el modal.
 if (cerrarModal && modal) {
     cerrarModal.addEventListener("click", () => {
-        modal.style.display = "none";
+        if (modalAbiertoEnHistorial) {
+            history.back();
+        } else {
+            cerrarVentanaProducto();
+        }
     });
 
     modal.addEventListener("click", evento => {
         if (evento.target === modal) {
-            modal.style.display = "none";
+            if (modalAbiertoEnHistorial) {
+                history.back();
+            } else {
+                cerrarVentanaProducto();
+            }
         }
     });
 }
 
 document.addEventListener("keydown", evento => {
-    if (evento.key === "Escape" && modal) {
-        modal.style.display = "none";
+    if (evento.key === "Escape" && modal && modal.style.display === "flex") {
+        if (modalAbiertoEnHistorial) {
+            history.back();
+        } else {
+            cerrarVentanaProducto();
+        }
+    }
+});
+
+// Botón Atrás del teléfono/navegador: cierra el modal si está abierto
+window.addEventListener("popstate", () => {
+    if (modal && modal.style.display === "flex") {
+        cerrarVentanaProducto();
     }
 });
 

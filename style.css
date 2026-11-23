@@ -1075,3 +1075,10 @@ footer .derechos {
         font-size: 18px;
     }
 }
+/* X SIEMPRE ACCESIBLE EN LA VENTANA DEL PRODUCTO */
+
+.cerrar-modal {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
