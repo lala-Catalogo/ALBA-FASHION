@@ -1075,10 +1075,28 @@ footer .derechos {
         font-size: 18px;
     }
 }
-/* X SIEMPRE ACCESIBLE EN LA VENTANA DEL PRODUCTO */
-
 .cerrar-modal {
     position: sticky;
-    top: 0;
-    z-index: 10;
+    top: 10px;
+    margin-left: auto;
+    margin-right: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    background: #f5e6df;
+    color: #6d4538;
+
+    border-radius: 50%;
+    font-size: 28px;
+    font-weight: bold;
+
+    cursor: pointer;
+    z-index: 9999;
+
+    flex-shrink: 0;
 }
